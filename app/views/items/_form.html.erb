@@ -26,12 +26,17 @@
     <%= form.select("category_id", Category.all.collect {|p| [ p.name, p.id ] }) %>
   </div>
 
+  <hr>
+  <h4>
+    Links
+  </h4>
+
   <table class="table table-striped">
     <thead>
       <tr>
-        <th></th>
         <th>Name</th>
         <th>Description</th>
+        <th></th>
       </tr>
     </thead>
     <tbody class="columns">
