@@ -39,9 +39,9 @@
         <th></th>
       </tr>
     </thead>
-    <tbody class="columns">
+    <tbody class="links">
       <%= form.fields_for :links do |this_link| %>
-        <%= render 'link', f: this_link %>
+        <%= render 'link_fields', f: this_link %>
       <% end %>
     </tbody>
   </table>
@@ -50,5 +50,7 @@
 
   <div class="actions">
     <%= form.submit %>
+    <%= link_to_add_association 'Add Link', form, :links, class: 'btn btn-primary',
+          data: { association_insertion_node: '.links', association_insertion_method: :append} %>
   </div>
 <% end %>

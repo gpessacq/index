@@ -8,24 +8,18 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
 
-  # GET /items/1
-  # GET /items/1.json
   def show
   end
 
-  # GET /items/new
   def new
     @item = Item.new
     @item.links.build
   end
 
-  # GET /items/1/edit
   def edit
     @item.links.build
   end
 
-  # POST /items
-  # POST /items.json
   def create
     @item = Item.new(item_params)
 
@@ -40,8 +34,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /items/1
-  # PATCH/PUT /items/1.json
   def update
     respond_to do |format|
       if @item.update(item_params)
@@ -54,8 +46,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  # DELETE /items/1
-  # DELETE /items/1.json
   def destroy
     @item.destroy
     respond_to do |format|
