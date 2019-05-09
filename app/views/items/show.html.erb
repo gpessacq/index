@@ -1,3 +1,4 @@
+<h5>Item:</h5>
 <p>
   <strong>Name:</strong>
   <%= @item.name %>
@@ -10,12 +11,36 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @item.category %>
+  <%= @item.category.name %>
 </p>
 
+<h5>Links:</h5>
 <p>
-  <strong>User:</strong>
-  <%= @item.user %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          Name
+        </th>
+        <th>
+          Description
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @item.links.each do |link| %>
+        <tr>
+          <td>
+            <%= link.name %>
+          </td>
+          <td>
+            <%= link.description %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
 </p>
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
